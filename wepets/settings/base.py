@@ -61,7 +61,7 @@ ROOT_URLCONF = 'wepets.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [join(BASE_DIR, 'statics/dev')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
