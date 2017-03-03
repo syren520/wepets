@@ -3,6 +3,8 @@ var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 
 module.exports = {
   devtool: 'cheap-module-source-map',//配置生成Source Maps，选择合适的选项
@@ -19,23 +21,25 @@ module.exports = {
         {
           test: /\.css$/,
           exclude: path.join(__dirname, "node_modules"),
-          use:[
-            {loader: "style-loader"},
-            {loader: "css-loader"}
-          ]
+          use: ExtractTextPlugin.extract(
+            {
+                  fallback: "style-loader",
+                  use: 'css-loader'
+            }
+          )
+          // use:[
+          //   {loader: "style-loader"},
+          //   {loader: "css-loader"}
+          // ]
         },
         {
             test: /\.scss$/,
           exclude: path.join(__dirname, "node_modules"),
-            use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            }, {
-                loader: "css-loader" // translates CSS into CommonJS
-            },
-            {
-                loader: "sass-loader" // translates SCSS into CSS
-            }
-            ]
+            use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //resolve-url-loader may be chained before sass-loader if necessary
+          use: ['css-loader', 'sass-loader']
+        })
         },
         {
           test: /\.jsx$/,
@@ -71,7 +75,9 @@ module.exports = {
           template: __dirname+'/statics/dev/template.html',
           inject: 'body'
         }
-      )
+      ),
+
+      new ExtractTextPlugin('style.css')
   ],
   // devServer: {
   //   contentBase: "./wepets/build",//本地服务器所加载的页面所在的目录
