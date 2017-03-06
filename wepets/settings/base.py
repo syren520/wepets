@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 STATIC_ROOT = join(BASE_DIR, 'statics/product')
 
-STATICFILES_DIRS = [join(BASE_DIR, 'statics/dev')]
+STATICFILES_DIRS = [join(BASE_DIR, 'statics/dev/generated')]
 STATIC_URL = '/static/'
 
 STATICFILES_FINDERS = (
