@@ -68,6 +68,13 @@ module.exports = {
               ]
             }
           }]
+        },
+        {
+          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
         }
       ]
       //v1 version
@@ -111,7 +118,7 @@ module.exports = {
   ],
   resolve: {
     // you can now require('file') instead of require('file.js')
-    extensions: ['.js', '.json', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
     //This part could allow you to require files using relative path instead of ../../otherDir/XXX
     //there isn't too much doc about that. Since we use webpack 2.2.0
     //extra point: do not trust stuff you find online, spend hours(yuk...)

@@ -18,6 +18,7 @@ from django.conf.urls import include, url
 from django.views.generic import TemplateView
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name='products_list.html')),
-    url(r'^products/list', TemplateView.as_view(template_name='products_list.html'))
+    url(r'/$', TemplateView.as_view(template_name='products_list.html')),
+    url(r'^products', include('products.urls')),
+    url(r'^tt', TemplateView.as_view(template_name='products/products_list.html'))
 ]

@@ -3,3 +3,6 @@ node_modules/
 .env
 npm-debug.log
 .idea/
+*.cpython-36.pyc
+statics/dev/generated/
+webpack-stats.json
