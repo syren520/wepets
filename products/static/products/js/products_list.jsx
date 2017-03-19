@@ -52,6 +52,12 @@ class Greeter extends Component{
                   <div className="large-4 medium-4 columns end" key={i}>
                       <a href="#">{product.name}</a>
                       <p className="product-content">{product.description}</p>
+                        <img src={product.images[Math.floor(Math.random() * 3)]}></img>
+                          {/*product.images.map(function (image, i) {*/}
+                            {/*if (i == 0) {*/}
+                              {/*return (<img src={image}></img>)*/}
+                            {/*}*/}
+                          {/*})*/}
                   </div>)
               })}
             </div>

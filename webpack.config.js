@@ -16,7 +16,7 @@ module.exports = {
   output: {
     path: __dirname + "/statics/dev/generated",//打包后的文件存放的地方
     filename: "bundle.js",//打包后输出文件的文件名
-    publicPath: "http://localhost:3000/static/"
+    publicPath: "http://localhost:3000/static/generated"
   },
     module: {
       //migrate v1 to v2 https://webpack.js.org/guides/migrating/#module-loaders-is-now-module-rules

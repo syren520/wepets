@@ -4,7 +4,8 @@ $blue: red;
   font-size: large
 }
 
-#section-1-products-list .custom-tab li{
+#section-1-products-list {
+  .custom-tab li {
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -13,5 +14,10 @@ $blue: red;
     margin: 0 15px;
     text-transform: capitalize;
     transition: all 300ms ease-in 0s;
-     list-style: none;
+    list-style: none;
+  }
+  .products-content .columns img {
+    width: 300px;
+    height: 200px;
+  }
 }
