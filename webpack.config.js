@@ -125,6 +125,8 @@ module.exports = {
     // https://webpack.js.org/guides/migrating/#resolve-root-resolve-fallback-resolve-modulesdirectories
     modules: [
      path.join(__dirname, "products/static"),
+     path.join(__dirname, "login/static"),
+     path.join(__dirname, "user/static"),
      path.join(__dirname, "admin/static"),
      path.join(__dirname, "statics/dev"),
      path.join(__dirname, "node_modules")
