@@ -13,7 +13,10 @@ $menu-background: #333;
 
     li {
       background: $menu-background;
-
+      &#login-btn {
+        width: 60px;
+        text-align: center;
+      }
       a {
         color: #fff;
       }
