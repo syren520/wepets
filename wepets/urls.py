@@ -16,9 +16,12 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.views.generic import TemplateView
+from django.contrib.auth import urls as auth_urls
+
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
     url(r'/$', TemplateView.as_view(template_name='products_list.html')),
     url(r'^products', include('products.urls')),
-    url(r'^tt', TemplateView.as_view(template_name='products/products_list.html'))
+    url(r'^tt', TemplateView.as_view(template_name='products/products_list.html')),
+    url(r'^user/', include('user.urls')),
 ]
