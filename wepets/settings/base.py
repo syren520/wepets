@@ -59,6 +59,10 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'auth.backend.emailAuthBackend'
+]
+
 ROOT_URLCONF = 'wepets.urls'
 
 AUTH_USER_MODEL = 'user.User'
@@ -119,7 +123,7 @@ USE_TZ = True
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME': 'web_prod',
+'NAME': 'ttt',
 'USER':'wepetsadmin',
 'PASSWORD':'',
 'HOST':'localhost',
