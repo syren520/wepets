@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Login from 'login/js/login';
-import LoginForm from 'login/js/loginForm'
+import Login from 'user/js/login';
+import LoginForm from 'user/js/loginForm'
 import Greeter from 'products/js/products_list';
 import 'public_static/js/vendor/foundation'
 import 'public_static/js/vendor/what-input'

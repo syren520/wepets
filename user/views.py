@@ -22,8 +22,8 @@ def post_login(request):
 
 
 def post_create_new_user(request):
-    username = request.POST.get('username')
-    password = request.POST.get('password')
+    username = request.GET.get('username')
+    password = request.GET.get('password')
     if not username or not password:
         return HttpResponse(status=400)
 
